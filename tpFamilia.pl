@@ -66,7 +66,8 @@ bisabuelo(Bisabuelo,Bisnieto) :-
 
 pareja(Novio,Novia) :-
     progenitor(Novio,Hijo),
-    progenitor(Novia,Hijo).
+    progenitor(Novia,Hijo),
+    Novio\=Novia.
 
 suegros(Suegro,Casado) :-
     pareja(Casado,Casada),
@@ -86,6 +87,7 @@ primosSegundos(Primo1,Primo2) :-
     primos(Padre1,Padre2),
     progenitor(Padre1,Primo1),
     progenitor(Padre2,Primo2),
+    Padre1\=Padre2,
     Primo1\=Primo2.
 
 descendientes(Descendiente,Persona) :- 
@@ -93,3 +95,4 @@ descendientes(Descendiente,Persona) :-
 descendientes(Descendiente,Persona) :-
     progenitor(Padre,Persona),
     descendientes(Descendiente,Padre).
+
