@@ -52,6 +52,14 @@ tio(Tio,Sobrino) :-
     hermanos(Tio,Padre),
     progenitor(Padre,Sobrino).
 
+tioSegundo(Tio,Sobrino) :- 
+    primos(Tio,Padre),
+    progenitor(Padre,Sobrino).
+
+tioAbuelo(TioAbuelo,Sobrino) :-
+    abuelo(Abuelo,Sobrino),
+    hermanos(Abuelo,TioAbuelo).
+
 bisabuelo(Bisabuelo,Bisnieto) :-
     progenitor(Bisabuelo,Abuelo),
     abuelo(Abuelo,Bisnieto).
@@ -64,8 +72,18 @@ suegros(Suegro,Casado) :-
     pareja(Casado,Casada),
     progenitor(Suegro,Casada).
 
-cuniado(Cuniado,Casado) :-
+cuniados(Cuniado,Casado) :-
     pareja(Casado,Casada),
     hermanos(Cuniado,Casada).
 
-primos()
+primos(Primo1,Primo2) :-
+    hermanos(Padre1,Padre2),
+    progenitor(Padre1,Primo1),
+    progenitor(Padre2,Primo2),
+    Primo1\=Primo2.
+
+primosSegundos(Primo1,Primo2) :-
+    primos(Padre1,Padre2),
+    progenitor(Padre1,Primo1),
+    progenitor(Padre2,Primo2),
+    Primo1\=Primo2.
