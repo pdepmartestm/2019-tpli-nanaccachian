@@ -18,6 +18,8 @@ progenitor(alicia,karina).
 progenitor(alicia,ariel).
 progenitor(armando,karina).
 progenitor(armando,ariel).
+progenitor(alicia,karina).
+progenitor(alicia,ariel).
 progenitor(ohannes,rosa).
 progenitor(ohannes,enrique).
 progenitor(ohannes,vresh).
@@ -26,3 +28,18 @@ progenitor(narin,enrique).
 progenitor(narin,vresh).
 progenitor(vresh,juan).
 progenitor(vresh,alicia).
+progenitor(diruhi,juan).
+progenitor(diruhi,alicia).
+progenitor(karina,santino).
+progenitor(karina,ticiano).
+progenitor(rafael,santino).
+progenitor(rafael,ticiano).
+progenitor(ariel,anush).
+progenitor(paola,anush).
+progenitor(solange,julia).
+progenitor(federico,julia).
+
+hermanos(herm1,herm2) :-
+    progenitor(Padre,herm1),
+    progenitor(Padre,herm2),
+    herm1 \= herm2.
