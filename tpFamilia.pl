@@ -99,4 +99,3 @@ descendientes(Descendiente,Persona) :-
 descendientes(Descendiente,Persona) :-
     progenitor(Padre,Persona),
     descendientes(Descendiente,Padre).
-
