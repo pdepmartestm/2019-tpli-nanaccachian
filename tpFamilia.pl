@@ -43,3 +43,29 @@ hermanos(Herm1,Herm2) :-
     progenitor(Padre,Herm1),
     progenitor(Padre,Herm2),
     Herm1\=Herm2.
+
+abuelo(Abuelo,Nieto) :-
+    progenitor(Abuelo,Padre),
+    progenitor(Padre,Nieto).
+
+tio(Tio,Sobrino) :- 
+    hermanos(Tio,Padre),
+    progenitor(Padre,Sobrino).
+
+bisabuelo(Bisabuelo,Bisnieto) :-
+    progenitor(Bisabuelo,Abuelo),
+    abuelo(Abuelo,Bisnieto).
+
+pareja(Novio,Novia) :-
+    progenitor(Novio,Hijo),
+    progenitor(Novia,Hijo).
+
+suegros(Suegro,Casado) :-
+    pareja(Casado,Casada),
+    progenitor(Suegro,Casada).
+
+cuniado(Cuniado,Casado) :-
+    pareja(Casado,Casada),
+    hermanos(Cuniado,Casada).
+
+primos()
