@@ -87,3 +87,9 @@ primosSegundos(Primo1,Primo2) :-
     progenitor(Padre1,Primo1),
     progenitor(Padre2,Primo2),
     Primo1\=Primo2.
+
+descendientes(Descendiente,Persona) :- 
+    progenitor(Descendiente,Persona).
+descendientes(Descendiente,Persona) :-
+    progenitor(Padre,Persona),
+    descendientes(Descendiente,Padre).
