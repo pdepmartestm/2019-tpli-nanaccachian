@@ -4,6 +4,10 @@ progenitor(alberto,nicolas).
 progenitor(myriam,nicolas).
 progenitor(alberto,candela).
 progenitor(myriam,candela).
+progenitor(miguel,myriam).
+progenitor(ethel,myriam).
+progenitor(angel,miguel).
+progenitor(sara,miguel).
 progenitor(dicran,alberto).
 progenitor(dicran,gloria).
 progenitor(rosa,alberto).
