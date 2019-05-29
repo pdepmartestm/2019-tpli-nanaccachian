@@ -39,4 +39,7 @@ progenitor(paola,anush).
 progenitor(solange,julia).
 progenitor(federico,julia).
 
-hermanos(herm1,herm2):-progenitor(Padre,herm1),progenitor(Padre,herm2),herm1\=herm2.
+hermanos(Herm1,Herm2) :-
+    progenitor(Padre,Herm1),
+    progenitor(Padre,Herm2),
+    Herm1\=Herm2.
