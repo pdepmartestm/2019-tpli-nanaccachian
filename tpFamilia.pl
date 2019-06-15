@@ -43,6 +43,9 @@ progenitor(paola,anush).
 progenitor(solange,julia).
 progenitor(federico,julia).
 
+padres   (Hijo,Padre) :-
+    progenitor(Padre,Hijo).
+
 hermanos(Herm1,Herm2) :-
     progenitor(Padre,Herm1),
     progenitor(Padre,Herm2),
